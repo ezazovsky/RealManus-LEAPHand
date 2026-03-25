@@ -120,11 +120,11 @@ if __name__ == "__main__":
         else:
             right = zmq_sub.message          
             right = np.deg2rad(right[4:8] + [right[8] + 10] + right[9:16] +[90-1.75*right[1]] + [-45 + 3.0*right[0]] + [-30+3.0*right[2]] + [right[3]])
-            right[0] = -2.5 * right[0]
+            right[0] = -2.5 * right[0] + np.deg2rad(20)
             right[1] = 1.5 * right[1]
-            right[4] = -2.5 * right[4]
+            right[4] = -2.5 * right[4] + np.deg2rad(30) 
             right[5] = 1.5 * right[5]
-            right[8] = -2.5 * right[8] - np.deg2rad(45)
+            right[8] = -2.5 * right[8] 
             right[9] = 1.5 * right[9]
             right[12] = 1.5 * right[12]
             right[13] = 1.5 * right[13] + np.deg2rad(90)
